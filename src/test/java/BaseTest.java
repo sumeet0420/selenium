@@ -1,5 +1,6 @@
 import com.triscent.pages.*;
 import com.triscent.support.ProductSelectorHelperMenu;
+import com.triscent.utilities.BrowserHelper;
 import com.triscent.utilities.DriverSetup;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -27,12 +28,12 @@ public class BaseTest {
         PageFactory.initElements(driver, HeaderLinksSupport.class);
         PageFactory.initElements(driver, ProductSelectorHelperMenu.class);
         PageFactory.initElements(driver, RegisterPage.class);
-
+        PageFactory.initElements(driver, BrowserHelper.class);
     }
 
     @AfterSuite
     public void cleanUp(){
         //clickLogout();
-        //quitBrowser();
+        quitBrowser();
     }
 }

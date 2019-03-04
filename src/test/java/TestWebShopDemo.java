@@ -16,6 +16,7 @@ import static com.triscent.pages.ProductHome.selectProduct;
 import static com.triscent.pages.WebShopHome.openWebShopHomePage;
 import static com.triscent.pages.WebShopHome.selectProductType;
 import static com.triscent.support.ProductSelectorHelperMenu.sortBy;
+import static com.triscent.utilities.BrowserHelper.takeScreenShot;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -39,7 +40,9 @@ public class TestWebShopDemo extends BaseTest{
         addToCart();
         clickShoppingCartButton();
         checkTermsAndConditions();
+        takeScreenShot(driver,"fille_cart.png");
         removeItem("Casual Golf Belt");
         assertEquals(getAllCartItems().size(), 0) ;
+        takeScreenShot(driver,"empty_cart.png");
     }
 }
