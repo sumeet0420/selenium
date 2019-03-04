@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<suite name = "Buy Appareal Suite">
+    <test name = "Appareal test">
+        <classes>
+            <class name = "TestWebShopDemo" />
+        </classes>
+    </test>
+</suite>
