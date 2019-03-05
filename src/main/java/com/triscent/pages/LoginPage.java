@@ -35,7 +35,6 @@ public class LoginPage {
         emailTextBox.clear();
         emailTextBox.sendKeys(cs);
         emailId = username;
-        System.out.println(emailId);
         return this;
     }
 
