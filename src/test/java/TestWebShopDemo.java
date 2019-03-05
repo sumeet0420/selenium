@@ -40,7 +40,7 @@ public class TestWebShopDemo extends BaseTest{
         addToCart();
         clickShoppingCartButton();
         checkTermsAndConditions();
-        takeScreenShot(driver,"fille_cart.png");
+        takeScreenShot(driver,"filled_cart.png");
         removeItem("Casual Golf Belt");
         assertEquals(getAllCartItems().size(), 0) ;
         takeScreenShot(driver,"empty_cart.png");

@@ -13,5 +13,4 @@ public class UserDetailsPropertiesLoad extends PropertiesSetUp {
         setUpProperties(USERDETAILSFILE);
         return properties.getProperty("PASSWORD");
     }
-
 }

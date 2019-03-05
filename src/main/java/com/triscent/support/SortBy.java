@@ -14,4 +14,3 @@ public enum SortBy {
         return value;
     }
 }
-

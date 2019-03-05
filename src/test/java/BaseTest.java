@@ -21,6 +21,7 @@ public class BaseTest {
     public void setUpSuite(){
         driver = DriverSetup.openChrome();
         PageFactory.initElements(driver, WebShopHome.class);
+        PageFactory.initElements(driver, MyAccountOptions.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
         PageFactory.initElements(driver, ProductHome.class);
         PageFactory.initElements(driver, OrderProduct.class);
@@ -29,11 +30,13 @@ public class BaseTest {
         PageFactory.initElements(driver, ProductSelectorHelperMenu.class);
         PageFactory.initElements(driver, RegisterPage.class);
         PageFactory.initElements(driver, BrowserHelper.class);
+        PageFactory.initElements(driver,AddressAddPage.class);
+        PageFactory.initElements(driver,AddressHomePage.class);
     }
 
-    @AfterSuite
+   @AfterSuite
     public void cleanUp(){
-        //clickLogout();
+        clickLogout();
         quitBrowser();
     }
 }
