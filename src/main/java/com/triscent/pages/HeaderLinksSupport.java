@@ -10,7 +10,7 @@ import static com.triscent.utilities.DriverSetup.isElementPresent;
 
 public class HeaderLinksSupport {
 
-    final static String emailId= LoginPage.getEmailId();
+    private static String emailId= LoginPage.getEmailId();
     private static WebDriver driver;
     private static @FindBy(linkText ="Log out" ) WebElement logout;
     private static @FindBy(linkText ="Log in" ) WebElement login;
@@ -26,7 +26,7 @@ public class HeaderLinksSupport {
     }
 
     public static boolean verifyUserLoggedIn(){
-
+        System.out.println(By.linkText(LoginPage.getEmailId()));
         return (isElementPresent(By.linkText(LoginPage.getEmailId())));
     }
 

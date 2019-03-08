@@ -15,6 +15,9 @@ public class ExcelUtils {
     private static String filePath;
 
     public static Object[][] readExcelData(String fileName, String sheetName) throws Exception {
+        if(!fileName.endsWith(".xlsx")){
+
+        }
         String[][] arrayExcelData = null;
         String workingDir = System.getProperty("user.dir");
         filePath = workingDir + File.separator + "src" + File.separator + "main" + File.separator + "resources"

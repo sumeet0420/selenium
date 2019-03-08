@@ -12,4 +12,8 @@ public enum ShippingMethod {
         ShippingMethod ground = ShippingMethod.GROUND;
         System.out.println(ground.value);
     }
+
+    public String getValue(){
+        return value;
+    }
 }

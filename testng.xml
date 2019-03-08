@@ -3,7 +3,7 @@
 <suite name = "Buy Appareal Suite">
     <test name = "Appareal test">
         <classes>
-            <class name = "TestWebShopDemo" />
+            <class name = "TestRemoveItemFromCartDemo" />
         </classes>
     </test>
 </suite>

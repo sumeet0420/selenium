@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import java.util.concurrent.TimeUnit;
+
 import static com.triscent.pages.HeaderLinksSupport.clickLogout;
 import static com.triscent.utilities.DriverSetup.quitBrowser;
 
@@ -17,9 +19,10 @@ public class BaseTest {
     protected static final String username = UserDetailsPropertiesLoad.getUserName();
     protected static final String password = UserDetailsPropertiesLoad.getPassword();
 
-    @BeforeSuite
+   // @BeforeSuite
     public void setUpSuite(){
         driver = DriverSetup.openChrome();
+        driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
         PageFactory.initElements(driver, WebShopHome.class);
         PageFactory.initElements(driver, MyAccountOptions.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
@@ -32,11 +35,12 @@ public class BaseTest {
         PageFactory.initElements(driver, BrowserHelper.class);
         PageFactory.initElements(driver,AddressAddPage.class);
         PageFactory.initElements(driver,AddressHomePage.class);
+        PageFactory.initElements(driver, CheckoutPage.class);
+        PageFactory.initElements(driver, CreditCardPayment.class);
     }
 
-   @AfterSuite
+   //@AfterSuite
     public void cleanUp(){
-        clickLogout();
         quitBrowser();
     }
 }

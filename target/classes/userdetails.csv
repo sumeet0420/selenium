@@ -1,0 +1,3 @@
+username,password,expected
+abcdef@email.com,123456,true
+abcdef@e.com,1 ,false

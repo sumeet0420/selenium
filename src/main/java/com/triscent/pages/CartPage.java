@@ -1,5 +1,6 @@
 package com.triscent.pages;
 
+import static com.triscent.utilities.LogUtility.log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,8 +20,11 @@ public class CartPage {
     private static @FindBy(name = "checkout") WebElement checkoutButton;
     private static @FindBy(name = "termsofservice") WebElement termsCheckBox;
     private static @FindBy(name = "updatecart") WebElement updateCart;
+    private static @FindBys(@FindBy(xpath = "//input[@name='removefromcart']")) List<WebElement> productList;
 
     public CartPage(WebDriver driver) {
+        if(driver == null)
+            log.error("Driver is null as Cart Page");
         this.driver = driver;
     }
 
@@ -47,12 +51,13 @@ public class CartPage {
             Thread.sleep(100);
             return true;
         } else {
+            log.info("Invalid Product. Product not found.");
             throw new Exception("Product Not Found");
         }
     }
 
     public static List<WebElement> getAllCartItems(){
-        return driver.findElements(By.xpath("//input[@name='removefromcart']"));
+        return productList;
     }
 
     public static boolean emptyCart() {

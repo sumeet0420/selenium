@@ -28,8 +28,9 @@ public class WebShopHome {
     private static boolean isUserLoggedIn;
 
     public static boolean verifyUserLogin(){
-    return isUserLoggedIn;
+        return isUserLoggedIn;
     }
+
     public WebShopHome(WebDriver driver) {
         this.driver = driver;
     }
@@ -54,4 +55,5 @@ public class WebShopHome {
             new LoginError("A user is already logged in.");
         }
     }
+
 }
