@@ -10,7 +10,7 @@ import static org.testng.Assert.assertTrue;
 
 public class TestRegister extends BaseTest{
 
-    @Test
+    @Test(description = "This test case is used to Register a user")
     public static void testRegisterPage(){
         openWebShopHomePage();
         assertTrue(WebShopHome.verifyTitle());

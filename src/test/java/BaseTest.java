@@ -28,7 +28,7 @@ public class BaseTest {
     @BeforeSuite
     public void setUpSuite(){
         driver = DriverSetup.openChrome();
-        driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
         PageFactory.initElements(driver, WebShopHome.class);
         PageFactory.initElements(driver, MyAccountOptions.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
@@ -43,19 +43,20 @@ public class BaseTest {
         PageFactory.initElements(driver,AddressHomePage.class);
         PageFactory.initElements(driver, CheckoutPage.class);
         PageFactory.initElements(driver, CreditCardPayment.class);
+        PageFactory.initElements(driver, OrderConfirmPage.class);
     }
 
     /*
     *The purpose of the following test is verify whether the browser is opening and the homepage is successfullly getting opened.
      */
 
-    @Test//(enabled = false)
+    @Test(enabled = false)
     public void test(){
         openWebShopHomePage();
         assertTrue(WebShopHome.verifyTitle());
     }
 
-   @AfterSuite
+  // @AfterSuite
     public void cleanUp(){
         quitBrowser();
     }

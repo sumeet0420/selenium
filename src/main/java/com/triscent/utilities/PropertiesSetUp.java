@@ -16,6 +16,12 @@ public abstract class PropertiesSetUp {
 
     protected static void setUpProperties(String fileName){
          properties = new Properties();
+         if(!fileName.endsWith(".properties"))
+             try {
+                 throw new Exception("Invalid File Format.");
+             } catch (Exception e) {
+                 e.printStackTrace();
+             }
         try (InputStream inputStream = new FileInputStream(new File(RESOURCEPATH+fileName))) {
             properties.load(inputStream);
         } catch (FileNotFoundException e) {

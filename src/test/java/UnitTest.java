@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /*
-The purpose of this class is to run independependents tests. It doesn't extend the BaseTest for this purpose.
+The purpose of this class is to run independent tests. It doesn't extend the BaseTest for this purpose.
  */
 
 public class UnitTest {
@@ -15,6 +15,12 @@ public class UnitTest {
     @BeforeTest
     public  void setUp(){
         driver = new ChromeDriver();
+
+    }
+
+
+    @Test(enabled = false)
+    public void openHomePage(){
         driver.manage().window().maximize();
         driver.get("https://www.indiatoday.in/");
     }

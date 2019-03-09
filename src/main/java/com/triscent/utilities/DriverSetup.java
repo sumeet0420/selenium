@@ -40,8 +40,10 @@ public final class DriverSetup {
 
     public static boolean isElementPresent(By by) {
         try {
-            driver.findElements(by);
-            return true;
+            if(driver.findElements(by).size()>0)
+                return true;
+            else
+                return false;
         } catch (org.openqa.selenium.NoSuchElementException e) {
             return false;
         }

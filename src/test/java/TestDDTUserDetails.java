@@ -17,7 +17,7 @@ public class TestDDTUserDetails extends BaseTest {
         return CSVUtils.readCSV("userdetails.csv");
     }
 
-    @Test(dataProvider = "userdetails")
+    @Test(dataProvider = "userdetails", description = "This test is used to check user credentials by data driven testing")
     public void testLogin(String username, String password, String expected) {
         assertTrue(WebShopHome.verifyTitle());
         wakeUpAfter(1000);

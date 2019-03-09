@@ -15,7 +15,7 @@ import static org.testng.Assert.assertTrue;
 
 public class TestAddNewAddressAndDeleteAddress extends BaseTest {
 
-    @Test
+    @Test(description = "This test case is used to test new Address functionality.")
     public void testNewAddress() {
         openWebShopHomePage();
         assertTrue(WebShopHome.verifyTitle());
