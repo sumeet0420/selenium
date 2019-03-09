@@ -1,4 +1,3 @@
-import com.triscent.pages.HeaderLinksSupport;
 import com.triscent.pages.RegisterPage;
 import com.triscent.pages.WebShopHome;
 import com.triscent.support.Gender;

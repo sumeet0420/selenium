@@ -7,7 +7,9 @@ import org.testng.annotations.Test;
 /*
 The purpose of this class is to run independependents tests. It doesn't extend the BaseTest for this purpose.
  */
+
 public class UnitTest {
+
     WebDriver driver;
 
     @BeforeTest
@@ -17,7 +19,7 @@ public class UnitTest {
         driver.get("https://www.indiatoday.in/");
     }
 
-    @Test
+    @Test(enabled = false)
     public void testing(){
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
         javascriptExecutor.executeScript("window.scrollBy(0,1000)");

@@ -1,14 +1,15 @@
-import com.triscent.pages.*;
+import com.triscent.pages.HeaderLinksSupport;
+import com.triscent.pages.WebShopHome;
+import com.triscent.utilities.BrowserHelper;
 import org.testng.annotations.Test;
 
 import static com.triscent.pages.AddressAddPage.*;
-import static com.triscent.pages.AddressHomePage.clickAddNewAddressButton;
-import static com.triscent.pages.AddressHomePage.deleteAddress;
-import static com.triscent.pages.AddressHomePage.noOfAddresses;
+import static com.triscent.pages.AddressHomePage.*;
 import static com.triscent.pages.HeaderLinksSupport.clickEmailId;
 import static com.triscent.pages.HeaderLinksSupport.verifyUserLoggedIn;
 import static com.triscent.pages.MyAccountOptions.clickAddresses;
 import static com.triscent.pages.WebShopHome.openWebShopHomePage;
+import static com.triscent.utilities.BrowserHelper.wakeUpAfter;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -36,19 +37,11 @@ public class TestAddNewAddressAndDeleteAddress extends BaseTest {
         setPhoneNumber("123456789");
         setFaxNumber("12345");
         clickSaveButton();
-        try {
-            Thread.sleep(100);
-            assertEquals(2, noOfAddresses());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wakeUpAfter(100);
+        assertEquals(2, noOfAddresses());
         clickAddresses();
         deleteAddress(2);
-        try {
-            Thread.sleep(100);
-            assertEquals(1, noOfAddresses());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wakeUpAfter(100);
+        assertEquals(1, noOfAddresses());
     }
 }

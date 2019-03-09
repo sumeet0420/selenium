@@ -1,4 +1,3 @@
-import com.triscent.pages.CartPage;
 import com.triscent.pages.HeaderLinksSupport;
 import com.triscent.pages.ProductHome;
 import com.triscent.pages.WebShopHome;

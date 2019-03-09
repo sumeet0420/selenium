@@ -16,7 +16,15 @@ public class BrowserHelper {
         element.sendKeys(Keys.chord(Keys.CONTROL, Keys.ENTER));
     }
 
-    public void scrollToElement(WebElement element) throws InterruptedException {
+    public static void wakeUpAfter(long milliSeconconds){
+        try {
+            Thread.sleep(milliSeconconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public  static void scrollToElement(WebElement element) throws InterruptedException {
         Thread.sleep(200);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }

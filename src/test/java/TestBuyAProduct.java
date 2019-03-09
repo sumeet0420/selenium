@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import static com.triscent.pages.CartPage.checkTermsAndConditions;
 import static com.triscent.pages.CartPage.checkout;
 import static com.triscent.pages.CheckoutPage.*;
+import static com.triscent.pages.CreditCardPayment.*;
 import static com.triscent.pages.HeaderLinksSupport.clickShoppingCartButton;
 import static com.triscent.pages.HeaderLinksSupport.verifyUserLoggedIn;
 import static com.triscent.pages.OrderProduct.addToCart;
@@ -40,12 +41,12 @@ public class TestBuyAProduct extends BaseTest{
         clickShippingMethodContinueButton();
         selectPaymentMethod(PaymentMethod.CREDITCARD);
         clickPaymentMethodContinueButton();
-        CreditCardPayment.selectCreditCardType(CreditCardPayment.CreditCardType.AMEX);
-        CreditCardPayment.sendCardHolderName("ABCDEF");
-        CreditCardPayment.sendCardNumber("12341234123");
-        CreditCardPayment.selectExpiryYear("2020");
-        CreditCardPayment.selectExpiryMonth("03");
-        CreditCardPayment.sendCardCode("1234");
+        selectCreditCardType(CreditCardPayment.CreditCardType.AMEX);
+        sendCardHolderName("ABCDEF");
+        sendCardNumber("12341234123");
+        selectExpiryYear("2020");
+        selectExpiryMonth("03");
+        sendCardCode("1234");
         clickPaymentInformationContinueButton();
         clickConfirmOrderContinueButton();
     }

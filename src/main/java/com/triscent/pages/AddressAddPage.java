@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.concurrent.TimeUnit;
+
 public class AddressAddPage {
 
     private static final String TITLE= "Demo Web Shop. Account";
@@ -82,6 +84,7 @@ public class AddressAddPage {
         AddressAddPage.addressLine2.clear();
         AddressAddPage.addressLine2.sendKeys(addressLine2);
         log.info("Address Line 2 set as "+addressLine2);
+
     }
 
     public static void setPostalCode(String postalCode) {
